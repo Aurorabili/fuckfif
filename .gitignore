@@ -1,0 +1,7 @@
+# IDE
+.idea
+.vscode
+
+# test data
+test/*.wav
+draft*
