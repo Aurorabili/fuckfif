@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+	"name": "Debian",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/desktop-lite:1": {}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		6080
+	],
+	"portsAttributes": {
+		"6080": {
+			"label": "desktop"
+		}
+	},
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode",
+	"runArgs": [
+		"--gpus",
+		"all",
+		"--shm-size=2g"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.isort",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"GitHub.copilot",
+				"eamodio.gitlens",
+				"redjue.git-commit-plugin"
+			]
+		}
+	}
+}
