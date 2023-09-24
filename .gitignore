@@ -1,9 +1,16 @@
 # IDE
 .idea
 .vscode
+.devcontainer
 
 # cache
 draft/
 cache/
 .pytest_cache
 __pycache__/
+
+# models
+models
+
+# tmp
+tmp/
