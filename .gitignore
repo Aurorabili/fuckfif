@@ -14,3 +14,6 @@ models
 
 # tmp
 tmp/
+
+# secret
+user.json
