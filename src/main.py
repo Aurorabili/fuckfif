@@ -13,7 +13,7 @@ speaker = Speaker(  # 初始化语音合成器
     "tts_models/multilingual/multi-dataset/your_tts",  # 语音合成器模型
     "cuda",  # cuda|cpu 是否启用GPU加速
     "VirtualPipeMic",  # 虚拟麦克风名称 最后会将音频流输出到/tmp/{此选项的名称}
-    "draft/target_boy_voice.wav",  # 10秒左右的你的录音，用于生成目标音色
+    "draft/target_voice.wav",  # 10秒左右的你的录音，用于生成目标音色
 )
 
 with io.open("user.json") as f:
