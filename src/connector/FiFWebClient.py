@@ -148,25 +148,6 @@ class FiFWebClient:
             print("等待开始录音。")
             page.frame_locator("iframe").get_by_text("结束录音").is_enabled(timeout=0)
 
-            # # 使用浏览器检查的方法获取需要朗读的内容，这会导致没有显式给出答案的题型获取不到答案。
-            #
-            # txts = page.frame_locator("iframe").locator("ul > li").all()
-            # problem_text = ""
-            # problem_index = 0
-            # for i, txt in enumerate(txts):
-            #     if txt.get_attribute("style") == None:
-            #         problem_text = txt.text_content()
-            #         problem_index = i
-            #         break
-            # print(
-            #     "当前录音内容为第{}条。共获取到{}条。当前内容为{}。开始回答。".format(
-            #         problem_index, len(txts), problem_text
-            #     )
-            # )
-            # speaker.speak(problem_text)  # 阻塞
-            # print("第{}条回答完成。".format(problem_index))
-
-            # # 采用get_answer()方法获取答案
             print("正在回答第{}条。答案，内容为：\n{}".format(answer_index + 1, answer_text))
             speaker.speak(answer_text)
             print("第{}条回答完成。".format(answer_index + 1))
@@ -251,18 +232,6 @@ class FiFWebClient:
                     answer[_j["photo"]][locate - 1] += answer_string
                 else:
                     answer[_j["photo"]].append(answer_string)
-
-                # if "12" in _j["photo"]:
-                #     answer_string += _j["title"]
-                #     if _j["recordingTime"] != "":
-                #         answer_group = _j["recordingTime"].split("#")[0]
-
-                # if answer_group != -1:
-                #     if len(answer) < int(answer_group):
-                #         answer.append("")
-                #     answer[int(answer_group) - 1] += answer_string
-                # else:
-                #     answer.append(answer_string)
         result = []
         sample = qcontent["sample"].split("#")
         if sample == [""]:
