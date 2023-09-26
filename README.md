@@ -35,7 +35,7 @@ cd fuckfif
 
 ## 使用pip安装项目依赖
 ```bash
-pip install TTS playwright 
+pip install -r requirements.txt
 ```
 
 ## 填写FiF口语用户名和密码
